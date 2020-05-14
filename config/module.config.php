@@ -119,19 +119,25 @@ return [
         'default' => [
             'employee' => [
                 'label' => 'Employee',
-                'route' => 'home',
+                'route' => 'employee/default',
                 'class' => 'dropdown',
+                'resource' => 'employee/default',
+                'privilege' => 'index',
                 'pages' => [
                     [
                         'label' => 'Department Maintenance',
                         'route' => 'department/default',
                         'class' => 'dropdown-submenu',
+                        'resource' => 'department/default',
+                        'privilege' => 'index',
                         'pages' => [
                             [
                                 'label' => 'Add Department',
                                 'route' => 'department/default',
                                 'action' => 'create',
                                 'controller' => 'department',
+                                'resource' => 'department/default',
+                                'privilege' => 'create',
                             ],
                             
                             [
@@ -139,6 +145,8 @@ return [
                                 'route' => 'department/default',
                                 'action' => 'index',
                                 'controller' => 'department',
+                                'resource' => 'department/default',
+                                'privilege' => 'index',
                             ],
                         ],
                     ],
@@ -151,11 +159,15 @@ return [
                                 'label' => 'Add Employee',
                                 'route' => 'employee/default',
                                 'action' => 'create',
+                                'resource' => 'employee/default',
+                                'privilege' => 'create',
                             ],
                             [
                                 'label' => 'List Employees',
                                 'route' => 'employee/default',
                                 'action' => 'index',
+                                'resource' => 'employee/default',
+                                'privilege' => 'index',
                             ],
                         ],
                     ],
@@ -167,6 +179,8 @@ return [
                         'label' => 'Employee Settings',
                         'route' => 'employee/config',
                         'action' => 'index',
+                        'resource' => 'employee/config',
+                        'privilege' => 'index',
                     ],
                 ],
             ],
