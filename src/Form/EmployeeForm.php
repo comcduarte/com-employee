@@ -59,7 +59,6 @@ class EmployeeForm extends AbstractBaseForm
             'attributes' => [
                 'id' => 'EMAIL',
                 'class' => 'form-control',
-                'required' => 'true',
             ],
             'options' => [
                 'label' => 'Email Address',
@@ -90,7 +89,6 @@ class EmployeeForm extends AbstractBaseForm
             'attributes' => [
                 'id' => 'POSITION',
                 'class' => 'form-control',
-                'required' => 'true',
             ],
             'options' => [
                 'label' => 'Position',
@@ -103,7 +101,6 @@ class EmployeeForm extends AbstractBaseForm
             'attributes' => [
                 'id' => 'POSITION_DESC',
                 'class' => 'form-control',
-                'required' => 'true',
             ],
             'options' => [
                 'label' => 'Position Description',
