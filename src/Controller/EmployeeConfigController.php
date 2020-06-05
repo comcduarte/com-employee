@@ -75,6 +75,8 @@ class EmployeeConfigController extends AbstractConfigController
         $ddl->addColumn(new Varchar('TIME_SUBGROUP', 3, TRUE));
         $ddl->addColumn(new Varchar('POSITION', 36, TRUE));
         $ddl->addColumn(new Varchar('POSITION_DESC', 255, TRUE));
+        $ddl->addColumn(new Varchar('GRADE_SCHEDULE', 36, TRUE));
+        $ddl->addColumn(new Varchar('GRADE_SCHEDULE_DESC', 255, TRUE));
         
         
         $ddl->addConstraint(new PrimaryKey('UUID'));
@@ -150,6 +152,8 @@ class EmployeeConfigController extends AbstractConfigController
         $PTSG = 6;
         $POS = 7;
         $POS_DESC = 8;
+        $GS = 9;
+        $GS_DESC = 10;
         
         $request = $this->getRequest();
         
@@ -209,11 +213,29 @@ class EmployeeConfigController extends AbstractConfigController
                             $emp->TIME_SUBGROUP = sprintf('%03d', $record[$PTSG]);
                             $emp->POSITION = $record[$POS];
                             $emp->POSITION_DESC = $record[$POS_DESC];
+                            $emp->GRADE_SCHEDULE = $record[$GS];
+                            $emp->GRADE_SCHEDULE_DESC = $record[$GS_DESC];
                             $emp->DATE_CREATED = $today;
                             $emp->DATE_MODIFIED = $today;
                             $emp->STATUS = $emp::ACTIVE_STATUS;
 //                             $emp->setCurrentUser('SYSTEM');
                             $create_result = $emp->create();
+                        } else {
+                            $emp->FNAME = $record[$FNAME];
+                            $emp->LNAME = $record[$LNAME];
+                            $emp->EMAIL = $record[$FNAME] . '.' . $record[$LNAME] . '@middletownct.gov';
+                            $emp->DEPT = $current_dept;
+                            $emp->TIME_GROUP = sprintf('%03d', $record[$PTG]);
+                            $emp->TIME_SUBGROUP = sprintf('%03d', $record[$PTSG]);
+                            $emp->POSITION = $record[$POS];
+                            $emp->POSITION_DESC = $record[$POS_DESC];
+                            $emp->GRADE_SCHEDULE = $record[$GS];
+                            $emp->GRADE_SCHEDULE_DESC = $record[$GS_DESC];
+                            $emp->DATE_CREATED = $today;
+                            $emp->DATE_MODIFIED = $today;
+                            $emp->STATUS = $emp::ACTIVE_STATUS;
+                            
+                            $update_result = $emp->update();
                         }
                         $row++;
                     }

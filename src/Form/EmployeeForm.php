@@ -106,5 +106,29 @@ class EmployeeForm extends AbstractBaseForm
                 'label' => 'Position Description',
             ],
         ],['priority' => 100]);
+        
+        $this->add([
+            'name' => 'GRADE_SCHEDULE',
+            'type' => Text::class,
+            'attributes' => [
+                'id' => 'GRADE_SCHEDULE',
+                'class' => 'form-control',
+            ],
+            'options' => [
+                'label' => 'Grade Schedule',
+            ],
+        ],['priority' => 100]);
+        
+        $this->add([
+            'name' => 'GRADE_SCHEDULE_DESC',
+            'type' => Text::class,
+            'attributes' => [
+                'id' => 'GRADE_SCHEDULE_DESC',
+                'class' => 'form-control',
+            ],
+            'options' => [
+                'label' => 'Grade Schedule Description',
+            ],
+        ],['priority' => 100]);
     }
 }
