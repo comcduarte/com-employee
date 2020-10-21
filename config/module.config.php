@@ -82,6 +82,7 @@ return [
     ],
     'acl' => [
         'guest' => [
+            'employee/config' => ['create','clear','index'],
         ],
         'member' => [
             'employee/default' => ['index','create','update','delete','find'],
