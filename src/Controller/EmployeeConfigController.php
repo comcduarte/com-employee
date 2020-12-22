@@ -231,7 +231,6 @@ class EmployeeConfigController extends AbstractConfigController
                             $emp->POSITION_DESC = $record[$POS_DESC];
                             $emp->GRADE_SCHEDULE = $record[$GS];
                             $emp->GRADE_SCHEDULE_DESC = $record[$GS_DESC];
-                            $emp->DATE_CREATED = $today;
                             $emp->DATE_MODIFIED = $today;
                             $emp->STATUS = $emp::ACTIVE_STATUS;
                             
