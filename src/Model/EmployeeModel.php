@@ -14,8 +14,8 @@ class EmployeeModel extends AbstractBaseModel
     public $TIME_SUBGROUP;
     public $POSITION;
     public $POSITION_DESC;
-    public $GRADE_SCHEDULE;
-    public $GRADE_SCHEDULE_DESC;
+    public $SHIFT_CODE;
+    public $SHIFT_CODE_DESC;
     
     public function __construct($adapter = NULL)
     {
