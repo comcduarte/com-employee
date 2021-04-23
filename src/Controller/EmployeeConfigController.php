@@ -232,7 +232,6 @@ class EmployeeConfigController extends AbstractConfigController
                             $emp->SHIFT_CODE = $record[$SC];
                             $emp->SHIFT_CODE_DESC = $record[$SC_DESC];
                             $emp->DATE_MODIFIED = $today;
-                            $emp->STATUS = $emp::ACTIVE_STATUS;
                             
                             $update_result = $emp->update();
                         }
