@@ -170,7 +170,7 @@ class EmployeeConfigController extends AbstractConfigController
             $form->setData($data);
             
             if ($form->isValid()) {
-                $date = new \DateTime('now',new \DateTimeZone('EDT'));
+                $date = new \DateTime('now',new \DateTimeZone('UTC'));
                 $today = $date->format('Y-m-d H:i:s');
                 
                 $data = $form->getData();
