@@ -207,7 +207,6 @@ class EmployeeConfigController extends AbstractConfigController
                             $emp->EMP_NUM = sprintf('%06d', $record[$EMP_NUM]);
                             $emp->FNAME = $record[$FNAME];
                             $emp->LNAME = $record[$LNAME];
-                            $emp->EMAIL = $record[$FNAME] . '.' . $record[$LNAME] . '@middletownct.gov';
                             $emp->DEPT = $current_dept;
                             $emp->TIME_GROUP = sprintf('%03d', $record[$PTG]);
                             $emp->TIME_SUBGROUP = sprintf('%03d', $record[$PTSG]);
@@ -223,7 +222,6 @@ class EmployeeConfigController extends AbstractConfigController
                         } else {
                             $emp->FNAME = $record[$FNAME];
                             $emp->LNAME = $record[$LNAME];
-                            $emp->EMAIL = $record[$FNAME] . '.' . $record[$LNAME] . '@middletownct.gov';
                             $emp->DEPT = $current_dept;
                             $emp->TIME_GROUP = sprintf('%03d', $record[$PTG]);
                             $emp->TIME_SUBGROUP = sprintf('%03d', $record[$PTSG]);
