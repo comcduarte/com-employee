@@ -174,7 +174,6 @@ class EmployeeConfigController extends AbstractConfigController
                 $today = $date->format('Y-m-d H:i:s');
                 
                 $data = $form->getData();
-                // $records = file($data['FILE']['tmp_name']);
                 
                 $row = 0;
                 if (($handle = fopen($data['FILE']['tmp_name'],"r")) !== FALSE) {
@@ -192,10 +191,14 @@ class EmployeeConfigController extends AbstractConfigController
                             $dept->DATE_CREATED = $today;
                             $dept->DATE_MODIFIED = $today;
                             $dept->STATUS = $dept::ACTIVE_STATUS;
-//                             $dept->setCurrentUser('SYSTEM');
                             $dept->create();
                         }
                         $current_dept = $dept->UUID;
+                        
+                        $result = $dept->read(['CODE' => sprintf('%05d', str_pad($record[$PTG], 5, 0, STR_PAD_RIGHT))]);
+                        if ($result === TRUE) {
+                            $current_dept = $dept->UUID;
+                        }
                         
                         /****************************************
                          * Employees
@@ -217,7 +220,6 @@ class EmployeeConfigController extends AbstractConfigController
                             $emp->DATE_CREATED = $today;
                             $emp->DATE_MODIFIED = $today;
                             $emp->STATUS = $emp::ACTIVE_STATUS;
-//                             $emp->setCurrentUser('SYSTEM');
                             $create_result = $emp->create();
                         } else {
                             $emp->FNAME = $record[$FNAME];
@@ -230,7 +232,7 @@ class EmployeeConfigController extends AbstractConfigController
                             $emp->SHIFT_CODE = $record[$SC];
                             $emp->SHIFT_CODE_DESC = $record[$SC_DESC];
                             $emp->DATE_MODIFIED = $today;
-                            
+                            $emp->STATUS = $emp::ACTIVE_STATUS;
                             $update_result = $emp->update();
                         }
                         $row++;
