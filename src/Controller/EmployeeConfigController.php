@@ -194,8 +194,8 @@ class EmployeeConfigController extends AbstractConfigController
                             $dept->create();
                         }
                         $current_dept = $dept->UUID;
-                        
-                        $result = $dept->read(['CODE' => sprintf('%05d', str_pad($record[$PTG], 5, 0, STR_PAD_RIGHT))]);
+                                                
+                        $result = $dept->read(['CODE' => sprintf('%03d%02d', $record[$PTG], 0)]);
                         if ($result === TRUE) {
                             $current_dept = $dept->UUID;
                         }
