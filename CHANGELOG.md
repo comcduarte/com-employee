@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
+## 1.0.4
+### Changed
+- Convert Interop Containers to PSR
+
 ## 1.0.2 - 2021-11-05
 ### Changed
 - Employees assigned department based on PTG, not DEPT CODE

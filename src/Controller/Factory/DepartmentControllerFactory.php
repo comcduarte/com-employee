@@ -4,7 +4,7 @@ namespace Employee\Controller\Factory;
 use Employee\Controller\DepartmentController;
 use Employee\Form\DepartmentForm;
 use Employee\Model\DepartmentModel;
-use Interop\Container\ContainerInterface;
+use Psr\Container\ContainerInterface;
 use Laminas\ServiceManager\Factory\FactoryInterface;
 
 class DepartmentControllerFactory implements FactoryInterface
