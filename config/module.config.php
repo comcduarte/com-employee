@@ -85,9 +85,9 @@ return [
             'employee/config' => ['create','clear','index'],
         ],
         'member' => [
-            'employee/default' => ['index','create','update','delete','find'],
+            'employee/default' => ['index','create','update','delete','find','menu'],
             'employee/config' => ['index','clear','create', 'reconciledirectories','importemployees'],
-            'department/default' => ['index','create','update','delete'],
+            'department/default' => ['index','create','update','delete','menu'],
         ],
     ],
     'controller_plugins' => [
@@ -123,14 +123,14 @@ return [
                 'route' => 'employee/default',
                 'class' => 'dropdown',
                 'resource' => 'employee/default',
-                'privilege' => 'index',
+                'privilege' => 'menu',
                 'pages' => [
                     [
                         'label' => 'Department Maintenance',
                         'route' => 'department/default',
                         'class' => 'dropdown-submenu',
                         'resource' => 'department/default',
-                        'privilege' => 'index',
+                        'privilege' => 'menu',
                         'pages' => [
                             [
                                 'label' => 'Add Department',
@@ -155,6 +155,8 @@ return [
                         'label' => 'Employee Maintenance',
                         'route' => 'employee/default',
                         'class' => 'dropdown-submenu',
+                        'resource' => 'employee/default',
+                        'privilege' => 'menu',
                         'pages' => [
                             [
                                 'label' => 'Add Employee',
