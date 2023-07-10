@@ -3,7 +3,7 @@ namespace Employee\Form\Factory;
 
 use Employee\Form\EmployeeForm;
 use Employee\Model\EmployeeModel;
-use Interop\Container\ContainerInterface;
+use Psr\Container\ContainerInterface;
 
 class EmployeeFormFactory implements \Laminas\ServiceManager\Factory\FactoryInterface
 {

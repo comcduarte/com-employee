@@ -2,7 +2,7 @@
 namespace Employee\Controller\Factory;
 
 use Employee\Controller\EmployeeConfigController;
-use Interop\Container\ContainerInterface;
+use Psr\Container\ContainerInterface;
 use Laminas\ServiceManager\Factory\FactoryInterface;
 
 class EmployeeConfigControllerFactory implements FactoryInterface

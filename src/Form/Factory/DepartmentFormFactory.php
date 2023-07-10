@@ -3,7 +3,7 @@ namespace Employee\Form\Factory;
 
 use Employee\Form\DepartmentForm;
 use Employee\Model\DepartmentModel;
-use Interop\Container\ContainerInterface;
+use Psr\Container\ContainerInterface;
 use Laminas\ServiceManager\Factory\FactoryInterface;
 
 class DepartmentFormFactory implements FactoryInterface
