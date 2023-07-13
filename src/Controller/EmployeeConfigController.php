@@ -139,8 +139,7 @@ class EmployeeConfigController extends AbstractConfigController
         $url = $this->getRequest()->getHeader('Referer')->getUri();
         return $this->redirect()->toUrl($url);
     }
-    
-    
+        
     public function importemployeesAction()
     {
         $EMP_NUM = 0;
