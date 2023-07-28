@@ -14,6 +14,7 @@ use Laminas\Db\Sql\Ddl\Column\Datetime;
 use Laminas\Db\Sql\Ddl\Column\Integer;
 use Laminas\Db\Sql\Ddl\Column\Varchar;
 use Laminas\Db\Sql\Ddl\Constraint\PrimaryKey;
+use Laminas\Db\Sql\Ddl\Index\Index;
 use Laminas\View\Model\ViewModel;
 
 class EmployeeConfigController extends AbstractConfigController
@@ -80,6 +81,7 @@ class EmployeeConfigController extends AbstractConfigController
         
         
         $ddl->addConstraint(new PrimaryKey('UUID'));
+        $ddl->addConstraint(new Index(['EMP_NUM'], 'IDX_EMP_NUM'));
         
         $this->adapter->query($sql->buildSqlString($ddl), $this->adapter::QUERY_MODE_EXECUTE);
         unset($ddl);
