@@ -221,7 +221,7 @@ class EmployeeConfigController extends AbstractConfigController
                             $emp->DATE_CREATED = $today;
                             $emp->DATE_MODIFIED = $today;
                             $emp->STATUS = $emp::ACTIVE_STATUS;
-                            $create_result = $emp->create();
+                            $emp->create();
                         } else {
                             $emp->FNAME = $record[$FNAME];
                             $emp->LNAME = $record[$LNAME];
@@ -234,7 +234,7 @@ class EmployeeConfigController extends AbstractConfigController
                             $emp->SHIFT_CODE_DESC = $record[$SC_DESC];
                             $emp->DATE_MODIFIED = $today;
                             $emp->STATUS = $emp::ACTIVE_STATUS;
-                            $update_result = $emp->update();
+                            $emp->update();
                         }
                         $row++;
                     }
