@@ -155,6 +155,8 @@ return [
                         'label' => 'Employee Maintenance',
                         'route' => 'employee/default',
                         'class' => 'dropdown-submenu',
+                        'resource' => 'employee/default',
+                        'privilege' => 'index',
                         'pages' => [
                             [
                                 'label' => 'Add Employee',
