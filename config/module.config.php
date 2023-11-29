@@ -81,13 +81,12 @@ return [
         ],
     ],
     'acl' => [
-        'guest' => [
-            'employee/config' => ['create','clear','index'],
-        ],
-        'member' => [
+        'EVERYONE' => [
             'employee/default' => ['index','create','update','delete','find'],
-            'employee/config' => ['index','clear','create', 'reconciledirectories','importemployees'],
             'department/default' => ['index','create','update','delete'],
+        ],
+        'admin' => [
+            'employee/config' => ['index','clear','create', 'reconciledirectories','importemployees'],
         ],
     ],
     'controller_plugins' => [
@@ -124,6 +123,7 @@ return [
                 'class' => 'dropdown',
                 'resource' => 'employee/default',
                 'privilege' => 'index',
+                'order' => 50,
                 'pages' => [
                     [
                         'label' => 'Department Maintenance',
