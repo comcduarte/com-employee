@@ -24,6 +24,7 @@ class EmployeeController extends AbstractBaseController
         $select->from('employees');
         $select->columns([
             'UUID' => 'UUID',
+            'Employee Number' => 'EMP_NUM',
             'First Name' => 'FNAME',
             'Last Name' => 'LNAME',
             'Email' => 'EMAIL',
